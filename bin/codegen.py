@@ -30,12 +30,26 @@ PREAMBULA = """
 
 # Items defentition
 items = [
+    # Room 1
     {
         'name': "R1 Climate",
         'id': "r1_climate",
         'zigbee_id': '0xa4c138f5460e22dd',
         'type': DEVICES.TUYA_TEMPERATURE_SENSOR_TS0201,
     },
+    {
+        'name': "R1 Table",
+        'id': "r1_table",
+        'zigbee_id': '0x7cb03eaa0a09e7bc',
+        'type': DEVICES.OSRAM_SMART_PLUG,
+    },
+    {
+        'name': "Exit button",
+        'id': "exit_button",
+        'zigbee_id': '0x04cd15fffe6d57dc',
+        'type': DEVICES.OSRAM_SMART_PLUG,
+    },
+    # Kitchen
     {
         'name': "KU Climate",
         'id': "ku_climate",

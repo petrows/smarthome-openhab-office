@@ -15,6 +15,11 @@ Text item=r1_climate_humidity
 Text item=r1_climate_link icon="linkz"
 Text item=r1_climate_ota icon="fire"
 }
+Frame label="R1 Table (0x7cb03eaa0a09e7bc)" {
+Switch item=r1_table_sw
+Text item=r1_table_link icon="linkz"
+Text item=r1_table_ota icon="fire"
+}
 Frame label="KU Climate (0xa4c1386df39045f6)" {
 Text item=ku_climate_temperature
 Text item=ku_climate_humidity
