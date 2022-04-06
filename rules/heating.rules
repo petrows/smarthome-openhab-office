@@ -1,6 +1,6 @@
 rule "Heating NIGHT"
 when
-	Time cron "0 00 23,01 ? * *"
+	Time cron "0 15 00 ? * *"
 then
 	logWarn("heating", "Set NIGHT")
 
