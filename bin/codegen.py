@@ -47,7 +47,7 @@ items = [
         'name': "Exit button",
         'id': "exit_button",
         'zigbee_id': '0x04cd15fffe6d57dc',
-        'type': DEVICES.OSRAM_SMART_PLUG,
+        'type': DEVICES.IKEA_TRADFRI_STYRBAR,
     },
     # Kitchen
     {

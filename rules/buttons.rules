@@ -1,0 +1,13 @@
+rule "Exit button SW"
+when
+    Channel "mqtt:topic:openhab:exit_button:action" triggered
+then
+    var state = receivedEvent
+    logWarn("button", "Exit button: " + state)
+    switch(state) {
+        case "off": {
+            g_hz_all.sendCommand(4.5)
+            r1_table_sw.sendCommand(OFF)
+        }
+    }
+end

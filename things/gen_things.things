@@ -30,6 +30,17 @@ Thing mqtt:topic:openhab:r1_table "R1 Table" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/r1_table", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// Exit button (0x04cd15fffe6d57dc)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:exit_button "Exit button" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="zigbee2mqtt/exit_button", transformationPattern="JSONPATH:$.action", trigger=true]
+		Type number : battery [stateTopic="zigbee2mqtt/exit_button", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/exit_button", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
+		Type number : link [stateTopic="zigbee2mqtt/exit_button", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/exit_button", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // KU Climate (0xa4c1386df39045f6)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Thing mqtt:topic:openhab:ku_climate "KU Climate" (mqtt:broker:openhab) {

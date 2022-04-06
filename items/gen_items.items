@@ -24,6 +24,13 @@ Switch r1_table_sw "R1 Table" <switch> {channel="mqtt:topic:openhab:r1_table:sta
 Number:Dimensionless r1_table_link "R1 Table LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:r1_table:link"}
 Switch r1_table_ota "R1 Table OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:r1_table:ota"}
 
+// Exit button (0x04cd15fffe6d57dc)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Number:Dimensionless exit_button_link "Exit button LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:exit_button:link"}
+Switch exit_button_ota "Exit button OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:exit_button:ota"}
+Number:Dimensionless exit_button_battery "Exit button [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:exit_button:battery"}
+Switch exit_button_battery_low "Exit button [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:exit_button:battery_low"}
+
 // KU Climate (0xa4c1386df39045f6)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Number:Temperature ku_climate_temperature "KU Climate [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:ku_climate:temperature"}

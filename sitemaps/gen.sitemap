@@ -20,6 +20,10 @@ Switch item=r1_table_sw
 Text item=r1_table_link icon="linkz"
 Text item=r1_table_ota icon="fire"
 }
+Frame label="Exit button (0x04cd15fffe6d57dc)" {
+Text item=exit_button_link icon="linkz"
+Text item=exit_button_ota icon="fire"
+}
 Frame label="KU Climate (0xa4c1386df39045f6)" {
 Text item=ku_climate_temperature
 Text item=ku_climate_humidity

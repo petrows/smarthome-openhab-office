@@ -1,31 +1,38 @@
 // Heating settings
 
 Group:Number:AVG g_hz_all "Heating all set [%.1f °C]"
+Group:Number:AVG g_hz_room "Heating room set [%.1f °C]"
 Group:Number:AVG g_hz_valve "Heating all pos [%d %%]"
 
 // MAX! cube
 
+// Kitchen
+
+Group ku_heating_mode "KU Heating Mode []"
+Group:Number:AVG ku_heating_sensor "KU Heating Sensor [%.1f °C]"
+Group:Number:AVG ku_heating_set "KU Heating Set [%.1f °C]" (g_hz_all)
+Group:Number:AVG ku_heating_valve "KU Heating Pos [%d %%]" (g_hz_valve)
+
 Switch ku_heating_lowbatt "KU Heating lowbatt [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:OEQ2037329:battery_low"}
-String ku_heating_mode "Mode []" {channel="max:thermostat:NEQ1442869:OEQ2037329:mode"}
-Number:Temperature ku_heating_sensor "Sensor [%.1f %unit%]" <temperature> {channel="max:thermostat:NEQ1442869:OEQ2037329:actual_temp"}
-Number:Temperature ku_heating_set "Set [%.1f %unit%]" <heatingt> (g_hz_all) {channel="max:thermostat:NEQ1442869:OEQ2037329:set_temp"}
-Number ku_heating_valve "Pos [%d %%]" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1442869:OEQ2037329:valve"}
+String ku_1_heating_mode (ku_heating_mode) {channel="max:thermostat:NEQ1442869:OEQ2037329:mode"}
+Number:Temperature ku_1_heating_sensor (ku_heating_sensor) {channel="max:thermostat:NEQ1442869:OEQ2037329:actual_temp"}
+Number:Temperature ku_1_heating_set (ku_heating_set) {channel="max:thermostat:NEQ1442869:OEQ2037329:set_temp"}
+Number ku_1_heating_valve (ku_heating_valve) {channel="max:thermostat:NEQ1442869:OEQ2037329:valve"}
 
 // Room 1
 
-Group r1_heating_lowbatt "R1 Heating lowbatt [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low)
-Group r1_heating_mode "Mode []"
-Group:Number:AVG r1_heating_sensor "Sensor [%.1f °C]"
-Group:Number:AVG r1_heating_set "Set [%.1f °C]" (g_hz_all,g_hz_room)
-Group:Number:AVG r1_heating_valve "Pos [%d %%]" (g_hz_valve)
+Group r1_heating_mode "R1 Heating Mode []"
+Group:Number:AVG r1_heating_sensor "R1 Heating Sensor [%.1f °C]"
+Group:Number:AVG r1_heating_set "R1 Heating Set [%.1f °C]" (g_hz_all,g_hz_room)
+Group:Number:AVG r1_heating_valve "R1 Heating Pos [%d %%]" (g_hz_valve)
 
-Switch r1_1_heating_lowbatt (r1_heating_lowbatt) {channel="max:thermostat:NEQ1442869:MEQ1774936:battery_low"}
+Switch r1_1_heating_lowbatt "R1-1 Heating lowbatt [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low)  {channel="max:thermostat:NEQ1442869:MEQ1774936:battery_low"}
 String r1_1_heating_mode (r1_heating_mode) {channel="max:thermostat:NEQ1442869:MEQ1774936:mode"}
 Number:Temperature r1_1_heating_sensor (r1_heating_sensor) {channel="max:thermostat:NEQ1442869:MEQ1774936:actual_temp"}
 Number:Temperature r1_1_heating_set (r1_heating_set) {channel="max:thermostat:NEQ1442869:MEQ1774936:set_temp"}
 Number r1_1_heating_valve (r1_heating_valve) {channel="max:thermostat:NEQ1442869:MEQ1774936:valve"}
 
-Switch r1_2_heating_lowbatt (r1_heating_lowbatt) {channel="max:thermostat:NEQ1442869:MEQ1775184:battery_low"}
+Switch r1_2_heating_lowbatt "R1-2 Heating lowbatt [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:MEQ1775184:battery_low"}
 String r1_2_heating_mode (r1_heating_mode) {channel="max:thermostat:NEQ1442869:MEQ1775184:mode"}
 Number:Temperature r1_2_heating_sensor (r1_heating_sensor) {channel="max:thermostat:NEQ1442869:MEQ1775184:actual_temp"}
 Number:Temperature r1_2_heating_set (r1_heating_set) {channel="max:thermostat:NEQ1442869:MEQ1775184:set_temp"}
@@ -33,8 +40,13 @@ Number r1_2_heating_valve (r1_heating_valve) {channel="max:thermostat:NEQ1442869
 
 // Room 2
 
-Switch r2_heating_lowbatt "KU Heating lowbatt [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:OEQ1037125:battery_low"}
-String r2_heating_mode "Mode []" {channel="max:thermostat:NEQ1442869:OEQ1037125:mode"}
-Number:Temperature r2_heating_sensor "Sensor [%.1f %unit%]" <temperature> {channel="max:thermostat:NEQ1442869:OEQ1037125:actual_temp"}
-Number:Temperature r2_heating_set "Set [%.1f %unit%]" <heatingt> (g_hz_all,g_hz_room) {channel="max:thermostat:NEQ1442869:OEQ1037125:set_temp"}
-Number r2_heating_valve "Pos [%d %%]" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1442869:OEQ1037125:valve"}
+Group r2_heating_mode "R2 Heating Mode []"
+Group:Number:AVG r2_heating_sensor "R2 Heating Sensor [%.1f °C]"
+Group:Number:AVG r2_heating_set "R2 Heating Set [%.1f °C]" (g_hz_all,g_hz_room)
+Group:Number:AVG r2_heating_valve "R2 Heating Pos [%d %%]" (g_hz_valve)
+
+Switch r2_1_heating_lowbatt "R2 Heating lowbatt [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:OEQ1037125:battery_low"}
+String r2_1_heating_mode (r2_heating_mode) {channel="max:thermostat:NEQ1442869:OEQ1037125:mode"}
+Number:Temperature r2_1_heating_sensor (r2_heating_sensor) {channel="max:thermostat:NEQ1442869:OEQ1037125:actual_temp"}
+Number:Temperature r2_1_heating_set (r2_heating_set) {channel="max:thermostat:NEQ1442869:OEQ1037125:set_temp"}
+Number r2_1_heating_valve (r2_heating_valve) {channel="max:thermostat:NEQ1442869:OEQ1037125:valve"}
