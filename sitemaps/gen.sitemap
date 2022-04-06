@@ -1,0 +1,25 @@
+
+// ==========================================
+// THIS FILE IS AUTO GENERATED
+// Do not edit by hands
+// Use this command to regenerate:
+// python3 ./bin/codegen.py
+// ==========================================
+
+
+sitemap gen label="GEN ITEMS"
+{
+Frame label="R1 Climate (0xa4c138f5460e22dd)" {
+Text item=r1_climate_temperature
+Text item=r1_climate_humidity
+Text item=r1_climate_link icon="linkz"
+Text item=r1_climate_ota icon="fire"
+}
+Frame label="KU Climate (0xa4c1386df39045f6)" {
+Text item=ku_climate_temperature
+Text item=ku_climate_humidity
+Text item=ku_climate_link icon="linkz"
+Text item=ku_climate_ota icon="fire"
+}
+
+}

@@ -1,0 +1,6 @@
+Bridge max:bridge:NEQ1442869 [ ipAddress="10.81.0.5", serialNumber="NEQ1442869" ] {
+    Thing thermostat OEQ2037329 "Heating KU" [ serialNumber="OEQ2037329", refreshActualRate=0 ]
+    Thing thermostat MEQ1774936 "Heating R1/1" [ serialNumber="MEQ1774936", refreshActualRate=0 ]
+    Thing thermostat MEQ1775184 "Heating R1/2" [ serialNumber="MEQ1775184", refreshActualRate=0 ]
+    Thing thermostat OEQ1037125 "Heating R2/1" [ serialNumber="OEQ1037125", refreshActualRate=0 ]
+}
