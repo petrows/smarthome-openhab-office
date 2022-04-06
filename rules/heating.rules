@@ -1,0 +1,18 @@
+rule "Heating NIGHT"
+when
+	Time cron "0 00 23,01 ? * *"
+then
+	logWarn("heating", "Set NIGHT")
+
+    val maxCubeActions = getActions("max-cube", "max:bridge:NEQ1442869")
+    val Boolean success = maxCubeActions.reboot()
+    logInfo("heating", "MAX! reboot: {}", success)
+
+    // Sleep 30 seconds
+    Thread::sleep(30000)
+
+    logWarn("heating", "Force manual and off")
+
+    g_hz_mode.sendCommand("MANUAL")
+    g_hz_all.sendCommand(4.5)
+end

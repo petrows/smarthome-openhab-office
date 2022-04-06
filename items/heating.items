@@ -1,5 +1,6 @@
 // Heating settings
 
+Group:String g_hz_mode "Heating all mode []"
 Group:Number:AVG g_hz_all "Heating all set [%.1f °C]"
 Group:Number:AVG g_hz_room "Heating room set [%.1f °C]"
 Group:Number:AVG g_hz_valve "Heating all pos [%d %%]"
@@ -8,7 +9,7 @@ Group:Number:AVG g_hz_valve "Heating all pos [%d %%]"
 
 // Kitchen
 
-Group ku_heating_mode "KU Heating Mode []"
+Group ku_heating_mode "KU Heating Mode []" (g_hz_mode)
 Group:Number:AVG ku_heating_sensor "KU Heating Sensor [%.1f °C]"
 Group:Number:AVG ku_heating_set "KU Heating Set [%.1f °C]" (g_hz_all)
 Group:Number:AVG ku_heating_valve "KU Heating Pos [%d %%]" (g_hz_valve)
@@ -21,7 +22,7 @@ Number ku_1_heating_valve (ku_heating_valve) {channel="max:thermostat:NEQ1442869
 
 // Room 1
 
-Group r1_heating_mode "R1 Heating Mode []"
+Group r1_heating_mode "R1 Heating Mode []" (g_hz_mode)
 Group:Number:AVG r1_heating_sensor "R1 Heating Sensor [%.1f °C]"
 Group:Number:AVG r1_heating_set "R1 Heating Set [%.1f °C]" (g_hz_all,g_hz_room)
 Group:Number:AVG r1_heating_valve "R1 Heating Pos [%d %%]" (g_hz_valve)
@@ -40,7 +41,7 @@ Number r1_2_heating_valve (r1_heating_valve) {channel="max:thermostat:NEQ1442869
 
 // Room 2
 
-Group r2_heating_mode "R2 Heating Mode []"
+Group r2_heating_mode "R2 Heating Mode []" (g_hz_mode)
 Group:Number:AVG r2_heating_sensor "R2 Heating Sensor [%.1f °C]"
 Group:Number:AVG r2_heating_set "R2 Heating Set [%.1f °C]" (g_hz_all,g_hz_room)
 Group:Number:AVG r2_heating_valve "R2 Heating Pos [%d %%]" (g_hz_valve)

@@ -48,6 +48,7 @@ items = [
         'id': "exit_button",
         'zigbee_id': '0x04cd15fffe6d57dc',
         'type': DEVICES.IKEA_TRADFRI_STYRBAR,
+        'expire': '1m',
     },
     # Kitchen
     {
