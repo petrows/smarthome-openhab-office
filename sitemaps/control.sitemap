@@ -1,25 +1,25 @@
-sitemap control label="Control" {
+sitemap control label="Office" {
     Frame label="Room 1" {
         Text item=r1_climate_temperature label="Temperature [%d °C]"
         Text item=r1_climate_humidity label="Humidity [%d %%]"
 
-        Text item=r1_heating_valve label="Pos [%d %%]" icon="heating"
-        Setpoint item=r1_heating_set label="Set" icon="heating" minValue=4.5 maxValue=25 step=0.5
-        Switch item=r1_heating_set label="Modus []" icon="climate" mappings=["23"="☼", "17"="☾", "4.5"="OFF"]
+        Text item=r1_heating_valve label="Heating pos [%d %%]" icon="heating"
+        Setpoint item=r1_heating_set label="Heating set" icon="heating" minValue=4.5 maxValue=25 step=0.5 visibility=[cfg_hz_enable==ON]
+        Switch item=r1_heating_set label="Heating mode []" icon="climate" mappings=["23"="☼", "17"="☾", "4.5"="OFF"] visibility=[cfg_hz_enable==ON]
         Switch item=r1_table_sw label="Table []"
     }
     Frame label="Room 2" {
-        Text item=r2_heating_valve label="Pos [%d %%]" icon="heating"
-        Setpoint item=r2_heating_set label="Set" icon="heating" minValue=4.5 maxValue=25 step=0.5
-        Switch item=r2_heating_set label="Modus []" icon="climate" mappings=["23"="☼", "17"="☾", "4.5"="OFF"]
+        Text item=r2_heating_valve label="Heating pos [%d %%]" icon="heating"
+        Setpoint item=r2_heating_set label="Heating set" icon="heating" minValue=4.5 maxValue=25 step=0.5 visibility=[cfg_hz_enable==ON]
+        Switch item=r2_heating_set label="Heating mode []" icon="climate" mappings=["23"="☼", "17"="☾", "4.5"="OFF"] visibility=[cfg_hz_enable==ON]
     }
     Frame label="Kitchen" {
         Text item=ku_climate_temperature label="Temperature [%d °C]"
         Text item=ku_climate_humidity label="Humidity [%d %%]"
 
-        Text item=ku_heating_valve label="Pos [%d %%]" icon="heating"
-        Setpoint item=ku_heating_set label="Set" icon="heating" minValue=4.5 maxValue=25 step=0.5
-        Switch item=ku_heating_set label="Modus []" icon="climate" mappings=["23"="☼", "17"="☾", "4.5"="OFF"]
+        Text item=ku_heating_valve label="Heating pos [%d %%]" icon="heating"
+        Setpoint item=ku_heating_set label="Heating set" icon="heating" minValue=4.5 maxValue=25 step=0.5 visibility=[cfg_hz_enable==ON]
+        Switch item=ku_heating_set label="Heating mode []" icon="climate" mappings=["23"="☼", "17"="☾", "4.5"="OFF"] visibility=[cfg_hz_enable==ON]
     }
     Frame label="Settings" {
 		Group item=g_zigbee_link label="Zigbee" icon=linkz {
@@ -32,5 +32,8 @@ sitemap control label="Control" {
 			}
 		}
         Group item=g_device_activity
+        Group item=cfg_hz_enable label="Heating [%s]" icon="heating" {
+            Switch item=cfg_hz_enable
+        }
 	}
 }

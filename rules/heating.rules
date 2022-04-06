@@ -1,18 +1,48 @@
+// Control heating and common modes
+
+// Common const
+
+var temp_off = 4.5
+
+// Rule to switch OFF all heating at night
+
 rule "Heating NIGHT"
 when
 	Time cron "0 15 00 ? * *"
 then
 	logWarn("heating", "Set NIGHT")
 
-    val maxCubeActions = getActions("max-cube", "max:bridge:NEQ1442869")
-    val Boolean success = maxCubeActions.reboot()
+    val max_cube = getActions("max-cube", "max:bridge:NEQ1442869")
+    val Boolean success = max_cube.reboot()
     logInfo("heating", "MAX! reboot: {}", success)
 
-    // Sleep 30 seconds
-    Thread::sleep(30000)
+    // Sleep 1 minutes
+    Thread::sleep(60000)
 
     logWarn("heating", "Force manual and off")
 
+    hz_temp_auto.sendCommand(temp_off)
+end
+
+// Common command rule
+
+rule "Heating Auto command"
+when
+	Item hz_temp_auto received command
+then
+    val command = receivedCommand
+    logInfo("heating", "Auto: {}", command)
+
+    // Force all thermostats for manual control
     g_hz_mode.sendCommand("MANUAL")
-    g_hz_all.sendCommand(4.5)
+
+    // If heting disabled - force off
+	if (cfg_hz_enable.state != ON) {
+		logInfo("heating", "Auto disabled")
+        g_hz_all.sendCommand(temp_off)
+		return
+	}
+
+    // Proceed command
+    g_hz_all.sendCommand(command)
 end

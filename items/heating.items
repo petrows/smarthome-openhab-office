@@ -1,5 +1,13 @@
 // Heating settings
 
+// Master switch for auto heating control
+Switch cfg_hz_enable "Heating enable"
+
+// Main control point for auto-modes heating command
+Number hz_temp_auto "Heating command"
+
+// Common groups for heating states
+
 Group:String g_hz_mode "Heating all mode []"
 Group:Number:AVG g_hz_all "Heating all set [%.1f °C]"
 Group:Number:AVG g_hz_room "Heating room set [%.1f °C]"
