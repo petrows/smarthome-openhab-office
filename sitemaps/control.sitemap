@@ -34,6 +34,8 @@ sitemap control label="Office" {
         Group item=g_device_activity
         Group item=cfg_hz_enable label="Heating [%s]" icon="heating" {
             Switch item=cfg_hz_enable
+            Setpoint item=cfg_hz_temp_off icon="heatingt" minValue=4.5 maxValue=25 step=0.5 visibility=[cfg_hz_enable==ON]
+            Setpoint item=cfg_hz_temp_on icon="heatingt" minValue=4.5 maxValue=25 step=0.5 visibility=[cfg_hz_enable==ON]
         }
 	}
 }

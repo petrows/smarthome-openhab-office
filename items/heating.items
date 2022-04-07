@@ -3,6 +3,10 @@
 // Master switch for auto heating control
 Switch cfg_hz_enable "Heating enable"
 
+// Values for different modes
+Number cfg_hz_temp_off "Heating temp off [%.1f °C]"
+Number cfg_hz_temp_on "Heating temp on [%.1f °C]"
+
 // Main control point for auto-modes heating command
 Number hz_temp_auto "Heating command"
 
