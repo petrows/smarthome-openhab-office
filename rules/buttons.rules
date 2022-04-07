@@ -6,12 +6,13 @@ then
     logWarn("button", "Exit button: " + state)
     switch(state) {
         case "on": {
-            hz_temp_auto.sendCommand(cfg_hz_temp_on.state)
+            hz_temp_auto.sendCommand(cfg_hz_temp_on.state as Number)
             r1_table_sw.sendCommand(ON)
         }
         case "off": {
-            g_hz_all.sendCommand(cfg_hz_temp_off.state)
+            g_hz_all.sendCommand(cfg_hz_temp_off.state as Number)
             r1_table_sw.sendCommand(OFF)
+            g_light_all.sendCommand(OFF)
         }
      }
 end

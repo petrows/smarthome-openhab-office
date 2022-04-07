@@ -49,6 +49,53 @@ items = [
         'zigbee_id': '0x04cd15fffe6d57dc',
         'type': DEVICES.IKEA_TRADFRI_STYRBAR,
     },
+    {
+        'name': "Main light",
+        'id': "r1_main_light",
+        'zigbee_id': '0x842e14fffe13a785',
+        'type': DEVICES.TUYA_WALL_SWITCH_TS0601,
+        'channels': {
+            'l1': {
+                'id': 'r1_main_light',
+                'name': 'R1 Main light',
+                'groups': {
+                    'sw': ['g_light_all', 'g_light_room', 'g_light_r1'],
+                }
+            },
+            # 'l2': {
+            #     'id': 'ku_light_switch_arbeit',
+            #     'name': 'KU Light Arbeit (Wall SW)',
+            #     'expire': '3h',
+            #     'groups': {
+            #         'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_ku'],
+            #     }
+            # },
+        }
+    },
+    # Room 2
+    {
+        'name': "Main light",
+        'id': "r2_main_light",
+        'zigbee_id': '0x842e14fffe13a9a3',
+        'type': DEVICES.TUYA_WALL_SWITCH_TS0601,
+        'channels': {
+            'l1': {
+                'id': 'r2_main_light',
+                'name': 'R2 Main light',
+                'groups': {
+                    'sw': ['g_light_all', 'g_light_room', 'g_light_r2'],
+                }
+            },
+            # 'l2': {
+            #     'id': 'ku_light_switch_arbeit',
+            #     'name': 'KU Light Arbeit (Wall SW)',
+            #     'expire': '3h',
+            #     'groups': {
+            #         'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_ku'],
+            #     }
+            # },
+        }
+    },
     # Kitchen
     {
         'name': "KU Climate",

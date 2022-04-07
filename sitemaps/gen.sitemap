@@ -24,6 +24,16 @@ Frame label="Exit button (0x04cd15fffe6d57dc)" {
 Text item=exit_button_link icon="linkz"
 Text item=exit_button_ota icon="fire"
 }
+Frame label="Main light (0x842e14fffe13a785)" {
+Switch item=r1_main_light_sw
+Text item=r1_main_light_link icon="linkz"
+Text item=r1_main_light_ota icon="fire"
+}
+Frame label="Main light (0x842e14fffe13a9a3)" {
+Switch item=r2_main_light_sw
+Text item=r2_main_light_link icon="linkz"
+Text item=r2_main_light_ota icon="fire"
+}
 Frame label="KU Climate (0xa4c1386df39045f6)" {
 Text item=ku_climate_temperature
 Text item=ku_climate_humidity

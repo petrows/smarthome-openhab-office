@@ -1,0 +1,3 @@
+Group:Switch:OR(ON, OFF) g_light_all
+Group:Switch:OR(ON, OFF) g_light_room
+Group:Switch:OR(ON, OFF) g_light_r1
