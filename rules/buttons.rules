@@ -9,5 +9,9 @@ then
             g_hz_all.sendCommand(4.5)
             r1_table_sw.sendCommand(OFF)
         }
+        case "on": {
+            hz_temp_auto.sendCommand(23.0)
+            r1_table_sw.sendCommand(ON)
+        }
     }
 end
