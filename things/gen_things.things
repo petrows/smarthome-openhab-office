@@ -41,18 +41,19 @@ Thing mqtt:topic:openhab:exit_button "Exit button" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/exit_button", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// Main light (0x842e14fffe13a785)
+// R1 Main light (0x842e14fffe13a785)
 // TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
-Thing mqtt:topic:openhab:r1_main_light "Main light" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:r1_main_light "R1 Main light" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state_l1 [stateTopic="zigbee2mqtt/r1_main_light", transformationPattern="JSONPATH:$.state_l1", commandTopic="zigbee2mqtt/r1_main_light/set", formatBeforePublish="{\"state_l1\":\"%s\"}"]
+		Type switch : state_l2 [stateTopic="zigbee2mqtt/r1_main_light", transformationPattern="JSONPATH:$.state_l2", commandTopic="zigbee2mqtt/r1_main_light/set", formatBeforePublish="{\"state_l2\":\"%s\"}"]
 		Type number : link [stateTopic="zigbee2mqtt/r1_main_light", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/r1_main_light", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// Main light (0x842e14fffe13a9a3)
+// R2 Main light (0x842e14fffe13a9a3)
 // TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
-Thing mqtt:topic:openhab:r2_main_light "Main light" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:r2_main_light "R2 Main light" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state_l1 [stateTopic="zigbee2mqtt/r2_main_light", transformationPattern="JSONPATH:$.state_l1", commandTopic="zigbee2mqtt/r2_main_light/set", formatBeforePublish="{\"state_l1\":\"%s\"}"]
 		Type number : link [stateTopic="zigbee2mqtt/r2_main_light", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]

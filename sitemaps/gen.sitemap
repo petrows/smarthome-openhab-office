@@ -24,12 +24,13 @@ Frame label="Exit button (0x04cd15fffe6d57dc)" {
 Text item=exit_button_link icon="linkz"
 Text item=exit_button_ota icon="fire"
 }
-Frame label="Main light (0x842e14fffe13a785)" {
+Frame label="R1 Main light (0x842e14fffe13a785)" {
+Switch item=r1_main_table_wall_sw
 Switch item=r1_main_light_sw
 Text item=r1_main_light_link icon="linkz"
 Text item=r1_main_light_ota icon="fire"
 }
-Frame label="Main light (0x842e14fffe13a9a3)" {
+Frame label="R2 Main light (0x842e14fffe13a9a3)" {
 Switch item=r2_main_light_sw
 Text item=r2_main_light_link icon="linkz"
 Text item=r2_main_light_ota icon="fire"

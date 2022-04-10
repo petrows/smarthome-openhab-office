@@ -16,3 +16,14 @@ then
         }
      }
 end
+
+rule "Toggle table wall SW"
+when
+    Item r1_main_table_wall_sw changed from OFF to ON
+then
+    if (r1_table_sw.state == ON) {
+        r1_table_sw.sendCommand(OFF)
+    } else {
+        r1_table_sw.sendCommand(ON)
+    }
+end
