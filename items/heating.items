@@ -32,6 +32,19 @@ Number:Temperature ku_1_heating_sensor (ku_heating_sensor) {channel="max:thermos
 Number:Temperature ku_1_heating_set (ku_heating_set) {channel="max:thermostat:NEQ1442869:OEQ2037329:set_temp"}
 Number ku_1_heating_valve (ku_heating_valve) {channel="max:thermostat:NEQ1442869:OEQ2037329:valve"}
 
+// WC
+
+Group wc_heating_mode "WC Heating Mode []" (g_hz_mode)
+Group:Number:AVG wc_heating_sensor "WC Heating Sensor [%.1f °C]"
+Group:Number:AVG wc_heating_set "WC Heating Set [%.1f °C]" (g_hz_all)
+Group:Number:AVG wc_heating_valve "WC Heating Pos [%d %%]" (g_hz_valve)
+
+Switch wc_1_heating_lowbatt "WC Heating lowbatt [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:OEQ1689478:battery_low"}
+String wc_1_heating_mode (wc_heating_mode) {channel="max:thermostat:NEQ1442869:OEQ1689478:mode"}
+Number:Temperature wc_1_heating_sensor (wc_heating_sensor) {channel="max:thermostat:NEQ1442869:OEQ1689478:actual_temp"}
+Number:Temperature wc_1_heating_set (wc_heating_set) {channel="max:thermostat:NEQ1442869:OEQ1689478:set_temp"}
+Number wc_1_heating_valve (wc_heating_valve) {channel="max:thermostat:NEQ1442869:OEQ1689478:valve"}
+
 // Room 1
 
 Group r1_heating_mode "R1 Heating Mode []" (g_hz_mode)
