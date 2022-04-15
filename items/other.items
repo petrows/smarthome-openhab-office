@@ -1,1 +1,2 @@
 Group:DateTime:EARLIEST g_device_activity "Device Activity [JS(display-activity.js):%s]" <time>
+Group:Switch:OR(ON,OFF) g_battery_low "Battery status"
