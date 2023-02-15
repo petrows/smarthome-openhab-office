@@ -1,0 +1,61 @@
+config:
+  mqtt_broker_id: openhab
+devices:
+
+# Room 1
+
+  - name: R1 Climate
+    id: r1_climate
+    zigbee_id: '0xa4c138f5460e22dd'
+    type: TUYA_TEMPERATURE_SENSOR_TS0201
+
+  - name: R1 Table
+    id: r1_table
+    zigbee_id: '0x7cb03eaa0a09e7bc'
+    type: OSRAM_SMART_PLUG
+
+  - name: Exit button
+    id: exit_button
+    zigbee_id: '0x04cd15fffe6d57dc'
+    type: IKEA_TRADFRI_STYRBAR
+
+  - name: R1 Main light
+    id: r1_main_light
+    zigbee_id: '0x842e14fffe13a785'
+    type: TUYA_WALL_SWITCH_TS0601
+    channels:
+      l1:
+        id: r1_main_table_wall
+        name: R1 Main table (wall switch)
+        expire: 0s
+      l2:
+        id: r1_main_light
+        name: R1 Main light
+        groups:
+          sw:
+          - g_light_all
+          - g_light_room
+          - g_light_r1
+
+# Room 2
+
+  - name: R2 Main light
+    id: r2_main_light
+    zigbee_id: '0x842e14fffe13a9a3'
+    type: TUYA_WALL_SWITCH_TS0601
+    channels:
+      l1:
+        id: r2_main_light
+        name: R2 Main light
+        groups:
+          sw:
+          - g_light_all
+          - g_light_room
+          - g_light_r2
+
+# Kitchen
+
+  - name: KU Climate
+    id: ku_climate
+    zigbee_id: '0xa4c1386df39045f6'
+    type: TUYA_TEMPERATURE_SENSOR_TS0201
